@@ -2,6 +2,7 @@ import LeftColumn from './components/LeftColumn';
 import Navbar from './components/Navbar';
 import RightColumn from './components/RightColumn';
 import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,10 @@ function App() {
             <RightColumn />
           </div>
         </div>
+        <div className='flex flex-col flex-1 relative'>
+          <Footer />
+        </div>
+       
       </div>
     </main>
   )

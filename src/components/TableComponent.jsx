@@ -41,7 +41,7 @@ const data = [
   {
     name: "0x89101...",
     Role: "Coffee",
-    departement: "The Federal Department of Finance (FDF)",
+    departement: "South Side Chicago",
     status: "active",
   },
   {
@@ -52,7 +52,13 @@ const data = [
     status: "active",
   },
   {
-    name: "0x2432...",
+    name: "0x24320...",
+    Role: "Palm Oil",
+    departement: "Food is a Living Thing NFT",
+    status: "active",
+  },
+  {
+    name: "0x14232...",
     Role: "Palm Oil",
     departement: "Food is a Living Thing NFT",
     status: "active",
@@ -64,7 +70,7 @@ const TableComponent = () => {
   return (
     <Card className="mt-4">
       <h3 className="text-tremor-content-strong dark:text-dark-tremor-content-strong font-semibold">
-        List of Swiss Federal Councillours
+        Top NFT Holders and Licensed Merchandises
       </h3>
       <Table className="mt-5">
         <TableHead>

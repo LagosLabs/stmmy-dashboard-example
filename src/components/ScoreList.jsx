@@ -27,7 +27,7 @@ const cities = [
 
 const ScoreList = () => {
   return (
-    <Card className="mx-auto max-w-md">
+    <Card className="max-w-full">
     <h3 className="text-tremor-content-strong dark:text-dark-tremor-content-strong font-medium">Top Sales by Cities</h3>
     <List className="mt-2">
       {cities.map((item) => (

@@ -19,7 +19,6 @@ const LeftColumn = () => {
         <AreaChartComponent />
         <TableComponent />
       </div>
-      <div className="font-bold text-gray-300 mt-4">Copyright © Lagos Labs 2024</div>
     </div>
   );
 };
