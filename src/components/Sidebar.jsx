@@ -14,9 +14,9 @@ const Sidebar = () => {
   return (
     <div className="bg-indigo-950 flex-none w-14 sm:w-20 h-screen">
       <div>
-        <HomeIcon width={40} className="text-gray-300 left-3 sm:left-6 fixed" />
+        <HomeIcon width={40} className="text-gray-300 left-3 sm:left-6 top-14 fixed" />
       </div>
-      <div className="fixed left-3 sm:left-6 top-[100px]">
+      <div className="fixed left-3 sm:left-6 top-[200px]">
         <ChartBarIcon
           width={40}
           className="bg-gray-600 p-2 rounded-lg mb-4 text-gray-300"
