@@ -5,8 +5,8 @@ import "./index.css";
 
 import { createWeb3Modal } from "@web3modal/wagmi/react";
 import { http, createConfig, WagmiProvider } from "wagmi";
-import { mainnet, polygonMumbai, } from "wagmi/chains";
-import { walletConnect, injected, coinbaseWallet } from "wagmi/connectors";
+import { mainnet, polygonAmoy, } from "wagmi/chains";
+import { walletConnect, coinbaseWallet } from "wagmi/connectors";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -20,15 +20,15 @@ const metadata = {
   icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
 
+const chains = [mainnet, polygonAmoy];
 const config = createConfig({
-  chains: [mainnet, polygonMumbai],
+  chains: chains,
   transports: {
     [mainnet.id]: http(),
-    [polygonMumbai.id]: http(),
+    [polygonAmoy.id]: http(),
   },
   connectors: [
     walletConnect({ projectId, metadata, showQrModal: false }),
-    injected({ shimDisconnect: true }),
     coinbaseWallet({
       appName: metadata.name,
       appLogoUrl: metadata.icons[0],
@@ -40,7 +40,7 @@ createWeb3Modal({
   wagmiConfig: config,
   projectId,
   enableAnalytics: true,
-  enableOnramp: true,
+  enableOnramp: false,
   themeMode: "dark", // Optional - 'light' as default
   themeVariables: {
     "--w3m-accent": "#EAB130",
