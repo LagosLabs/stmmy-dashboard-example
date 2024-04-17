@@ -10,10 +10,8 @@ import { walletConnect, injected, coinbaseWallet } from "wagmi/connectors";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-
-
 const queryClient = new QueryClient();
-const projectId = import.meta.env.VITE_PROJECT_ID;
+const projectId = process.env.PROJECT_ID;
 
 const metadata = {
   name: "Web3Modal",
