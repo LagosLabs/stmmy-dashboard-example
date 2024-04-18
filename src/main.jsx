@@ -6,9 +6,10 @@ import "./index.css";
 import { createWeb3Modal } from "@web3modal/wagmi/react";
 import { http, createConfig, WagmiProvider } from "wagmi";
 import { mainnet, polygonAmoy, } from "wagmi/chains";
-import { walletConnect, coinbaseWallet } from "wagmi/connectors";
+// import { walletConnect, coinbaseWallet } from "wagmi/connectors";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { defaultWagmiConfig, emailConnector } from "@web3modal/wagmi";
 
 const queryClient = new QueryClient();
 const projectId = process.env.PROJECT_ID;
@@ -21,31 +22,23 @@ const metadata = {
 };
 
 const chains = [mainnet, polygonAmoy];
-const config = createConfig({
+const config = defaultWagmiConfig({
   chains: chains,
-  transports: {
-    [mainnet.id]: http(),
-    [polygonAmoy.id]: http(),
-  },
-  connectors: [
-    walletConnect({ projectId, metadata, showQrModal: false }),
-    coinbaseWallet({
-      appName: metadata.name,
-      appLogoUrl: metadata.icons[0],
-    }),
-  ],
+  projectId,
+  metadata,
+  enableEmail: true,
 });
 
 createWeb3Modal({
   wagmiConfig: config,
   projectId,
   enableAnalytics: true,
-  enableOnramp: false,
+  enableOnramp: true,
   themeMode: "dark", // Optional - 'light' as default
   themeVariables: {
     "--w3m-accent": "#EAB130",
     "--w3m-border-radius-master": "8px",
-  }
+  },
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
