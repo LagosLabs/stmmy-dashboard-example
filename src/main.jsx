@@ -9,7 +9,7 @@ import { mainnet, polygonAmoy, } from "wagmi/chains";
 // import { walletConnect, coinbaseWallet } from "wagmi/connectors";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { defaultWagmiConfig, emailConnector } from "@web3modal/wagmi";
+import { defaultWagmiConfig } from "@web3modal/wagmi";
 
 const queryClient = new QueryClient();
 const projectId = process.env.PROJECT_ID;
