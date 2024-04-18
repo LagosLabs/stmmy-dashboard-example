@@ -5,7 +5,7 @@ import "./index.css";
 
 import { createWeb3Modal } from "@web3modal/wagmi/react";
 import { http, createConfig, WagmiProvider } from "wagmi";
-import { mainnet, polygonAmoy, } from "wagmi/chains";
+import { mainnet, polygonAmoy, base, polygon } from "wagmi/chains";
 // import { walletConnect, coinbaseWallet } from "wagmi/connectors";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -21,7 +21,7 @@ const metadata = {
   icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
 
-const chains = [mainnet, polygonAmoy];
+const chains = [mainnet, polygonAmoy, base, polygon];
 const config = defaultWagmiConfig({
   chains: chains,
   projectId,
